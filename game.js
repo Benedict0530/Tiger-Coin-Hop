@@ -107,7 +107,7 @@ function create() {
     player.setSize(40, 100);
     player.setBounce(0);
     player.setCollideWorldBounds(true);
-    player.setScale(1.5);
+    player.setScale(3);
 
     this.physics.world.on('worldbounds', function (body) {
         if (body.gameObject === player) {
@@ -377,7 +377,7 @@ function respawnEnemy() {
     const newEnemy = enemies.create(startX, startY, 'enemy');
     newEnemy.setSize(40, 0); // Set size based on your sprite dimensions
     newEnemy.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
-    newEnemy.setScale(1.5)
+    newEnemy.setScale(3)
     newEnemy.setCollideWorldBounds(true);
 
     // Flip the enemy horizontally if it's moving from right to left
