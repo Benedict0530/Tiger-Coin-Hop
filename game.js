@@ -237,7 +237,7 @@ function gameOver() {
         .setShadow(2, 2, 'rgba(0,0,0,1)', 2);
 
     // Create a restart button
-    const restartButton = this.add.text(config.width / 2, config.height / 2 -50, 'Restart', { fontSize: '64px', fill: '#fff', backgroundColor: '#66A242' })
+    const restartButton = this.add.text(config.width / 2, config.height / 2 -100, 'Restart', { fontSize: '64px', fill: '#fff', backgroundColor: '#BE5212' })
         .setOrigin(0.5)
         .setInteractive()
         .setShadow(2, 2, 'rgba(0,0,0,1)', 2);
