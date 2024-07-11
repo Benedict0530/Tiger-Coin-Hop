@@ -42,7 +42,7 @@ let highScore = 0;
 const game = new Phaser.Game(config);
 
 function preload() {
-   // sendAnalytics('startGame', null);
+   sendAnalytics('startGame', null);
     this.load.image('sky', 'sky3.png');
     this.load.spritesheet('dude', 'characterjump.png', { frameWidth: 138, frameHeight: 138 });
     this.load.spritesheet('jumpdude', 'idledude5.png', { frameWidth: 138, frameHeight: 138 });
@@ -210,7 +210,7 @@ if (storedHighScore) {
 
 function gameOver() {
 
-   // sendAnalytics('complete a game', null);
+   sendAnalytics('complete a game', null);
     isGameOver = true;
     this.sound.stopByKey('backgroundMusic');
 
@@ -433,11 +433,11 @@ function createAnimations() {
 
     player.anims.play('idle');
 }
-// function sendAnalytics(eventName, eventData) {
-//     if (eventName == null) {
-//         return;
-//     } else {
-//         window.jsBridge.postMessage(eventName, JSON.stringify(eventData)); // Pass eventData as a JSON string
-//         console.log('Event Tracked: ' + eventName);
-//     }
-// }
+function sendAnalytics(eventName, eventData) {
+    if (eventName == null) {
+        return;
+    } else {
+        window.jsBridge.postMessage(eventName, JSON.stringify(eventData)); // Pass eventData as a JSON string
+        console.log('Event Tracked: ' + eventName);
+    }
+}
